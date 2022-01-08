@@ -1,0 +1,99 @@
+@import url(../../css/common.css);
+
+@font-face {
+    font-family: 'Hobbiton Brush';
+    src: url('../ttf/hobbitonbrushhand.ttf');
+    /* downloaded from: https://www.dafont.com/font-comment.php?file=hobbiton_brush_hand */
+  }
+  
+  @font-face {
+    font-family: 'Tengwar Annatar';
+    src: url('../ttf/tnganbi.ttf');
+    /* downloaded from: https://www.dafont.com/font-comment.php?file=tengwar_annatar */
+  }
+  
+  body {
+    font-family: 'Hobbiton Brush';
+    font-size: 250%;
+    background: #424145;
+    background: radial-gradient(circle, #424145 0%, #0d101a 62%, #0d101a 100%);
+    background-size: cover;
+    -webkit-font-smoothing: antialiased;
+    color: #E3C478;
+  }
+
+.runes_container:after, .items_container:after, #puzzle_items::after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+div.rune {
+    margin: 0 4px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid orange;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+#puzzle_tree {
+    width: 100vw;
+    position: relative;
+}
+
+#puzzle_tree img.full {
+    width: 100%;
+}
+
+#puzzle_tree .button {
+    position: absolute;
+    background-color: #e4d8c0;
+    color: #312819;
+    opacity: 0.8;
+    border: 1px solid orange;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#puzzle_tree .button.selected {
+    background-color: #8f7a42;
+    opacity: 0.9;
+}
+
+#puzzle_items .item {
+    margin: 0 4px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    border: 1px solid orange;
+    float: left;
+}
+
+#puzzle_items .puzzle_answer {
+    width: 60px;
+    height: 90px;
+    margin: 20px 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    float: left;
+}
+
+
+#book_placeholder {
+    background-image: url(../images/items/book-symbol.png);
+}
+
+#pipe_placeholder {
+    background-image: url(../images/items/pipe-symbol.png);
+}
+
+#sword_placeholder {
+    background-image: url(../images/items/sting-symbol.png);
+}

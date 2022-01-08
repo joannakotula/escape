@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+    <script src="../js/jquery-1.12.4.min.js"></script>
+    <script src="../js/puzzles.js"></script>
+    <script src='../js/draganddrop.js' type='text/javascript'></script>
+</head>
+
+<body>
+    <script type='text/javascript'>
+        var puzzleName = $(location).attr('hash');
+        console.log(puzzleName);
+        const cartesian =
+    (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+
+        function openTheDoor() {
+            $(".door .half").addClass("animated");
+        }
+
+        var puzzles = {
+            puzzle_runes: function () {
+                var runes = cartesian([1, 2], [1, 2, 3, 4, 5, 6]).map(a => 'r' + a[1] + a[0]).forEach(name => {
+                    var img = `<img src='images/runes/${name}.png' />`;
+                    $('#runes').append(`<div id='${name}' class='puzzle_element rune'>${img}</div>`);
+                });
+                var expected = ['r12', 'r21', 'r22', 'r41', 'r62'];
+                $('#puzzle_runes').puzzle({
+                    solution: new Map([['result', expected]]),
+                    onSolved: openTheDoor
+                })
+            },
+            puzzle_tree: function(){
+                $('#puzzle_tree').puzzle({
+                    puzzleType: 'button',
+                    solution: new Map([['', ['polo', 'bungo', 'bingo', 'largo']]]),
+                    orderedSolution: false,
+                    onSolved: openTheDoor,
+                })
+            },
+            puzzle_items: function(){
+                var items = ['book.png', 'cup.jpg', 'pipe.png', 'pot.jpg', 'umbrella.jpg', 'sword.png'];
+                items.forEach(file => {
+                    var name = file.replace(/\.[^/.]+$/, "")
+                    var elem = `<div id='${name}' class='puzzle_element item'><img src='images/items/${file}' /></div>`;
+                    $('#items').append(elem);
+                })
+                $('#puzzle_items').puzzle({
+                    solution: new Map([['book_placeholder', ['book']], ['sword_placeholder', ['sword']], ['pipe_placeholder', ['pipe']]]),
+                    onSolved: openTheDoor
+                })
+            }
+        }
+
+        $(function () {
+            $(puzzleName).show();
+            puzzles[puzzleName.substring(1)]();
+        });
+    </script>
+
+    <div class="door">
+        <span class="animated rubberBand infinite">Otwarte!</span>
+        <div class="half left">
+            <div class="panel"></div>
+        </div>
+        <div class="half right">
+            <div class="panel"></div>
+        </div>
+    </div>
+    <div id="puzzle_items" class="puzzle">
+        <div id="items" class="items_container">
+            
+        </div>
+        <div id="book_placeholder" class="puzzle_answer items_container">
+
+        </div>
+        <div id="pipe_placeholder" class="puzzle_answer items_container">
+
+        </div>
+        <div id="sword_placeholder" class="puzzle_answer items_container">
+
+        </div>
+    </div>
+    <div id="puzzle_runes" class="puzzle">
+        <div id="runes" class="runes_container"></div>
+        <div id="result" class="puzzle_answer runes_container">
+        </div>
+    </div>
+    <div id="puzzle_tree" class="puzzle">
+        <img src="images/family-tree.jpg" class="full" /> 
+
+        <div id="drogo" class="button puzzle_element" 
+            style="top: 33.2%; left: 84%; height: 4%; width: 5%">
+        </div>
+        <div id="dora" class="button puzzle_element" 
+            style="top: 33.5%; left: 77%; height: 5%; width: 5%">
+        </div>
+        <div id="falco" class="button puzzle_element" 
+            style="top: 31.5%; left: 65%; height: 7%; width: 8.5%;">
+        </div>
+        <div id="odo" class="button puzzle_element" 
+            style="top: 22%; left: 56%; height: 8%; width: 8.5%;">
+        </div>
+        <div id="otho" class="button puzzle_element" 
+            style="top: 18%; left: 37%; height: 10%; width: 13%;">
+        </div>
+        <div id="prisca" class="button puzzle_element" 
+            style="top: 30%; left: 18%; height: 11%; width: 6%;">
+        </div>
+        <div id="posco" class="button puzzle_element" 
+            style="top: 33%; left: 7%; height: 10%; width: 7.5%;">
+        </div>
+
+        <div id="bingo" class="button puzzle_element" style="top: 46%; left: 65%; height: 7%; width: 8%;"></div>
+        <div id="fosco" class="button puzzle_element" style="top: 47%; left: 77%; height: 7%; width: 9%;"></div>
+        <div id="dudo" class="button puzzle_element" 
+            style="top: 43%; left: 88%; height: 4%; width: 5%">
+        </div>
+        <div id="linda" class="button puzzle_element" 
+            style="top: 36%; left: 57%; height: 10%; width: 7%;">
+        </div>
+        <div id="longo" class="button puzzle_element" 
+            style="top: 36%; left: 47%; height: 10%; width: 7%;">
+        </div>
+        <div id="belsa" class="button puzzle_element" 
+            style="top: 32%; left: 39%; height: 10%; width: 7%;">
+        </div>
+        <div id="bungo" class="button puzzle_element" 
+            style="top: 43.5%; left: 33%; height: 9%; width: 8%;">
+        </div>
+        <div id="polo" class="button puzzle_element" 
+            style="top: 48%; left: 24%; height: 5%; width: 6%;">
+        </div>
+        <div id="rosa" class="button puzzle_element" 
+            style="top: 51%; left: 15%; height: 10%; width: 7%;">
+        </div>
+
+
+        <div id="lily" class="button puzzle_element" style="top: 67%; left: 74%; height: 10%; width: 9%;"></div>
+        <div id="largo" class="button puzzle_element"
+            style="top:59%; left: 62%; height: 10%; width: 8%;">
+        </div>
+        <div id="mungo" class="button puzzle_element"
+            style="top:57%; left: 46%; height: 7%; width: 10%;">
+        </div>
+        <div id="ponto" class="button puzzle_element"
+            style="top:59%; left: 29%; height: 7%; width: 10%;">
+        </div>
+        <div id="pansy" class="button puzzle_element"
+            style="top:66%; left: 16%; height: 9%; width: 7%;">
+        </div>
+    </div>
+</body>
+
+</html>
