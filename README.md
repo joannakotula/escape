@@ -6,4 +6,8 @@ Ten projekt ma ułatwić przygotowanie prostej, małej gry przypominającej esca
 
 ## [Bag End](bag-end/)
 
-Pokój w klimacie Hobbita
+Pokój w klimacie "Hobbita" J. R. R. Tolkiena.
+
+## [Dresden](dresden/)
+
+Pokój na podstawie serii "Dresden files" Jima Butchera.
