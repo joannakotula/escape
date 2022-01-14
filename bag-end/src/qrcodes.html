@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script src="../../js/qrcode.js"></script>
+    <style>
+        .qrcode, #mountains {
+            padding: 10px;
+            float: left;
+            width: 45vw;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .qr_inner {
+            padding: 5px;
+        }
+
+        .qr_outer {
+            border: 1px dotted black;
+            margin: auto;
+        }
+
+        .qr_marker {
+            height: 50px;
+        }
+
+        .qr_url {
+            margin: 10px 5px;
+        }
+
+        #mountains img {
+            height: 200px;
+            border: 1px dotted black;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(function () {
+            $(".qrcode").qrcode({
+                showUrl: true,
+                marker: 'gandalf.png'
+            })
+        });
+    </script>
+
+    <div id="puzzle_items" class="qrcode" url="#puzzle_items"></div>
+    <div id="puzzle_runes" class="qrcode" url="#puzzle_runes"></div>
+    <div id="puzzle_tree" class="qrcode" url="#puzzle_tree"></div>
+    <div id="mountains">
+        <img src="mountain.png" />
+        <img src="mountain.png" />
+    </div>
+</body>
+
+</html>

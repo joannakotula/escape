@@ -76,6 +76,7 @@ https://lockandescape.pl/jak-zrobic-er-w-domu-lub-w-pracy/
     * [książka](https://www.maxpixel.net/Knowledge-Learning-Library-Reading-Literature-Book-154254)
     * [miecz](https://commons.m.wikimedia.org/wiki/File:Sword_01.svg)
     * [fajka](https://commons.m.wikimedia.org/wiki/File:Smoking_pipe.png)
+* Gandalf wycięty z tego [obrazka](https://pixabay.com/pl/illustrations/stypendium-hobbit-hobbici-5638589/)
 
 ## Biblioteki/fragmenty kodu
 
