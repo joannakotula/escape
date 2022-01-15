@@ -1,0 +1,59 @@
+.qr_inner {
+    padding: 5px;
+}
+
+.qr_inner img:first-of-type {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.qr_outer {
+    border: 1px dotted black;
+    margin: auto;
+}
+
+.qr_marker {
+    height: 50px;
+    margin: 5px;
+}
+
+.qr_url {
+    margin: 10px 5px;
+/* Copied from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+}
+
+.qrcode {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.qr_standard {
+    float: left;
+    width: 30vw;
+}
+
+.qr_large {
+    width: 60vw;
+    float: left;
+}
+
+body {
+    margin: 1vw;
+}
