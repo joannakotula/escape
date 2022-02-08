@@ -629,6 +629,8 @@ var QRCode;
 			markerClass: 'qr_marker',
 			urlClass: 'qr_url',
 			padding: 10,
+			qrSizeScale: 0.7,
+			qrSize: null
 		}, options);
 		var getUrl = function(el) {
 			var elementUrl = el.attr('url');
@@ -644,7 +646,9 @@ var QRCode;
 		}
 		var createOuter = function(size) {
 			var outer = $(`<div class='${settings.outerClass}'></div>`);
-			outer.width(size + settings.padding*2);
+			if (settings.padding) {
+				outer.width(size + settings.padding*2);
+			}
 			outer.css({"padding": settings.padding});
 			return outer;
 		}
@@ -660,7 +664,7 @@ var QRCode;
 
 		return this.each(function() {
 			var element = $(this);
-			var qrSize = element.width() * 0.70;
+			var qrSize = settings.qrSize ? settings.qrSize : element.width() * settings.qrSizeScale;
 			var inner = createInner(qrSize);
 			var outer = createOuter(qrSize)
 

@@ -1,3 +1,29 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+
+.page {
+    width: 21cm;
+    height: 29cm;
+    margin: 1cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+    .page {
+        box-shadow: none;
+        border: none;
+        margin: none;
+        padding: none;
+        /* width: auto; */
+        /* min-height: auto; */
+    }
+}
+
 .qr_inner {
     padding: 5px;
 }
@@ -19,7 +45,7 @@
 
 .qr_url {
     margin: 10px 5px;
-/* Copied from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+    /* Copied from https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
     /* These are technically the same, but use both */
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -46,13 +72,30 @@
 
 .qr_standard {
     float: left;
-    width: 30vw;
+    width: 30%;
 }
 
 .qr_large {
-    width: 60vw;
+    width: 60%;
     float: left;
 }
+
+.qr_huge {
+    width: 90%;
+}
+
+.qr_huge .qr_inner {
+    padding: 0px;
+}
+
+.qr_huge .qr_outer {
+    margin: 0px;
+}
+
+.qr_huge .qrcode {
+    padding: 0;
+}
+
 
 body {
     margin: 1vw;

@@ -1,0 +1,178 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="../../js/jquery-1.12.4.min.js"></script>
+    <script src="../../js/qrcode.js"></script>
+    <link rel="stylesheet" href="../../css/qrcode.css" type="text/css" />
+    <style>
+        .qr_outer {
+            border: none;
+        }
+        .qr_inner {
+            border: none;
+        }
+
+        .qr_inner img {
+            padding: 0px !important;
+        }
+
+        .qr_url {
+            margin: 2px;
+            font-size: small;
+        }
+
+
+        .ingredients table {
+            width: 500px;
+            height: 500px;
+            border-collapse: collapse;
+        }
+
+        .ingredients {
+            margin: 20px;
+        }
+        
+        .ingredients table, .ingredients td {
+            border: 1px solid black;
+        }
+
+        .ingredients td {
+            width: 166px;
+            height: 166px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .ingredients table img {
+            max-width: 160px;
+            max-height: 160px;
+        }
+
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        places = [
+            ["sound", "smell", "taste"],
+            ["sight", "base", "touch"],
+            ["spirit", "fire", "mind"]
+        ]
+
+        places_names = {
+            "base": "Baza",
+            "sight": "Wzrok",
+            "sound": "Słuch",
+            "smell": "Zapach",
+            "touch": "Dotyk",
+            "taste": "Smak",
+            "mind": "Umysł",
+            "spirit": "Serce",
+            "fire": ""
+        }
+
+        good_ingredients = {
+            "base": "Cola",
+            "sight": "Migotliwy cień",
+            "sound": "Mysie truchty",
+            "smell": "Olej silnikowy",
+            "touch": "Ścinki ptasiego pióra",
+            "taste": "Kawa w czekoladzie",
+            "mind": "Bilet autobusowy",
+            "spirit": "Cienki łańcuszek",
+            "fire": "img:fire.svg"
+        }
+
+        wrong_ingredients = ["Pączek", "Świeże mydło", "Pianie koguta", 
+                            "Skrawki myjki", "Kawa", "Promień słońca o brzasku", 
+                            "Kartka z terminarza", "Wesoła raźna muzyka", "Woda"];
+        
+        function createTable(data) {
+            var table = $("<table />");
+            for (const rd of data) {
+                var row = $("<tr />");
+                for (const cd of rd) {
+                    var content = cd;
+                    if (cd.startsWith('img:')) {
+                        var img = cd.split(":")[1];
+                        content = `<img src="${img}" />`
+                    }
+                    var cell = $(`<td>${content}</td>`);
+                    row.append(cell);
+                }
+                table.append(row);
+            }
+            return table;
+        }
+
+        function insertGoodIngredients(){
+            var data = []
+            for (const placeRow of places) {
+                var row = [];
+                for (const place of placeRow) {
+                    row.push(good_ingredients[place]);
+                }
+                row.reverse();
+                data.push(row)
+            }
+            $("#good_ingr").append(createTable(data));
+        }
+
+        function insertWrongIngredients(){
+            var data = [];
+            for (r = 0; r < 3; r++) {
+                data.push([]);
+                for (c = 0; c < 3; c++) {
+                    var idx = r*3 + c;
+                    data[r][c] = wrong_ingredients[r*3 + c];
+                }
+            }
+            $("#wrong_ingr").append(createTable(data));
+        }
+
+        function insertCauldronPlaces(){
+            var data = JSON.parse(JSON.stringify(places));
+            for (r = 0; r < 3; r++) {
+                for (c = 0; c < 3; c++) {
+                    data[r][c] = places_names[data[r][c]]
+                }
+            }
+            $("#cauldron").append(createTable(data));
+        }
+
+
+        $(function () {
+            $(".qrcode").qrcode({
+                showUrl: true,
+                padding: 0,
+                qrSize: 500,
+            })
+
+            insertGoodIngredients();
+            insertWrongIngredients();
+            insertCauldronPlaces();
+        });
+    </script>
+
+    <div class="page">
+        <div id="good_qr" class="qrcode qr_huge" url="#puzzle_out"></div>
+        <div id="wrong_qr" class="qrcode qr_huge" url="#puzzle_wrong"></div>
+    </div>
+    <div class="page">
+        <div>Składniki właściwe:</div>
+        <div id="good_ingr" class="qr_huge ingredients">
+        </div>
+        <div>Składniki pozostałe:</div>
+        <div id="wrong_ingr" class="qr_huge ingredients">
+        </div>
+    </div>
+    <div class="page">
+        <div>Wnętrze kociołka</div>
+        <div id="cauldron" class="qr_huge ingredients">
+        </div>
+    </div>
+</body>
+
+</html>
