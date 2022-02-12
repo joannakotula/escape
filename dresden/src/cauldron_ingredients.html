@@ -32,22 +32,16 @@
         }
 
         .ingredients table {
-            width: 133mm;
-            height: 133mm;
             border-collapse: collapse;
         }
 
-        .ingredients {
-            margin: 2mm;
-        }
-        
         .ingredients table, .ingredients td {
             border: 1px solid black;
         }
 
         .ingredients td {
-            width: 44mm;
-            height: 44mm;
+            width: 33%;
+            height: 33%;
             text-align: center;
             font-size: xx-large;
         }
@@ -159,6 +153,12 @@
             insertGoodIngredients();
             insertWrongIngredients();
             insertCauldronPlaces();
+
+            var cauldronSize = $(".qrcode canvas").width();
+            // 4 is for borders
+            var ingrSize = (cauldronSize - 4)/3;
+            $(".ingredients table").css('width', cauldronSize).css('height', cauldronSize);
+            $(".ingredients table td").css('width', ingrSize).css('height', ingrSize);
         });
     </script>
 
