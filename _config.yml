@@ -1,1 +1,7 @@
 theme: jekyll-theme-minimal
+comments:
+  issue-term: "pathname"
+  label: "comments"
+  theme: "github-light"
+  repo_id: "R_kgDOGpQ1Fw"
+  category_id: "DIC_kwDOGpQ1F84COSF6"
