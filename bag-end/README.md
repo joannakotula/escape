@@ -1,10 +1,10 @@
-# Mini Escape Room/Treasure Hunt w domu: Bag End
+# Bag End
 
 Gra "Bag End" w wersji podstawowej zawiera 3 zagadki. Jest przeznaczona dla jednego gracza. Została zaprojektowana i użyta w ramach prezentu urodzinowego i jej przejście zajęło solenizantowi niecałe 30 minut.
 
 ## Fabuła
 
-Gracz wciela się w Gandalfa, który dostał list od Bilba. Bilbo pisze w nim o urządzeniu jakie znalazł i prosi o przyjazd. Po wejściu do pokoju gracz znajduje drugi liścik, w którym Bilbo informuje, że niestety musiał wyjechać, a przedmiot jest dobrze ukryty ;)
+Gracz wciela się w Gandalfa, który dostał list od Bilba. Bilbo pisze w nim o urządzeniu jakie znalazł i prosi o przyjazd. Po wejściu do pokoju gracz znajduje drugi liścik, w którym Bilbo informuje, że niestety musiał wyjechać, a przedmiot jest dobrze ukryty :wink:
 
 ## Przygotowanie
 
