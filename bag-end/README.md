@@ -52,11 +52,6 @@ Listy są dostępne w [formie html](src/letters.html). Pdf [letters.pdf](to-prin
 * dwie strony na kartkę
 * skalowanie 200%
 
-#### Zwykłe zagadki
-
-https://lockandescape.pl/jak-zrobic-er-w-domu-lub-w-pracy/
-
-
 # Użyte utwory
 
 ## Czcionki
@@ -77,8 +72,3 @@ https://lockandescape.pl/jak-zrobic-er-w-domu-lub-w-pracy/
     * [miecz](https://commons.m.wikimedia.org/wiki/File:Sword_01.svg)
     * [fajka](https://commons.m.wikimedia.org/wiki/File:Smoking_pipe.png)
 * Gandalf wycięty z tego [obrazka](https://pixabay.com/pl/illustrations/stypendium-hobbit-hobbici-5638589/)
-
-## Biblioteki/fragmenty kodu
-
-* [Animacja otwierania drzwi](https://codepen.io/eyedoubleyou/pen/XWWEyWQ)
-* [Drag and drop w jquery na mobile](https://www.jqueryscript.net/other/Mobile-Drag-Drop-Plugin-jQuery.html)
