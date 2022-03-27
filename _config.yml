@@ -5,3 +5,6 @@ comments:
   theme: "github-light"
   repo_id: "R_kgDOGpQ1Fw"
   category_id: "DIC_kwDOGpQ1F84COSF6"
+
+plugins:
+  - jemoji
