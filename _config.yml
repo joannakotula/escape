@@ -2,6 +2,9 @@ remote_theme: joannakotula/leap-day
 title: Escape Room w domu
 description: Małym kosztem zrób Escape Room w swoim domu
 show_excerpts: true
+menu:
+  Strona główna: ./
+  Pomysły: blog
 comments:
   issue-term: "pathname"
   label: "comments"
