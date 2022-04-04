@@ -1,4 +1,6 @@
-theme: jekyll-theme-minimal
+remote_theme: joannakotula/leap-day
+title: Escape Room w domu
+description: Małym kosztem zrób Escape Room w swoim domu
 comments:
   issue-term: "pathname"
   label: "comments"
