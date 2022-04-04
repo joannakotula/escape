@@ -1,12 +1,20 @@
 remote_theme: joannakotula/leap-day
 title: Escape Room w domu
 description: Małym kosztem zrób Escape Room w swoim domu
+show_excerpts: true
 comments:
   issue-term: "pathname"
   label: "comments"
   theme: "github-light"
   repo_id: "R_kgDOGpQ1Fw"
   category_id: "DIC_kwDOGpQ1F84COSF6"
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "page"
 
 plugins:
   - jemoji

@@ -1,0 +1,24 @@
+---
+---
+
+ul.post-list {
+    list-style-type: none;
+    list-style-image: none;
+
+    li {
+        width: 80%;
+        // border: 1px dotted blue;
+        padding: 5px;
+
+        h3 {
+            // margin-bottom: 0px;
+            float: left;
+        }
+        span.post-meta {
+            float: right;
+        }
+        p.post-excerpt {
+            clear: both;
+        }
+    }
+}
