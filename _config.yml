@@ -12,6 +12,8 @@ comments:
   repo_id: "R_kgDOGpQ1Fw"
   category_id: "DIC_kwDOGpQ1F84COSF6"
 
+permalink: /:categories/:title
+timezone: Europe/Warsaw
 defaults:
   -
     scope:
